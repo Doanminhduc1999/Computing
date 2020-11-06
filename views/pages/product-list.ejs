@@ -28,9 +28,10 @@
     <script>
         var itemlist = {};
         var soluong = 0;
-
+        
         function add_to_cart(iditem, nameitem, priceitem) {
             
+
             if (iditem in itemlist) {
                 itemlist[iditem].number++;
             } else {
@@ -39,13 +40,12 @@
                     name: nameitem,
                     number: 1,
                     price : priceitem,
-                   
+       
                 };
             }
             soluong++;
             alert("Bạn mới thêm món hàng: \n" + iditem + " : " + nameitem 
-                + "\n Số lượng : \n" + itemlist[iditem].number + "\n Gía tiền: " + priceitem);
-            
+                + "\n Số lượng : \n" + itemlist[iditem].number + "\n Gía tiền: " + priceitem);  
             ///
             var objCart = document.getElementById("numberItems");
             objCart.textContent = "" + Object.keys(itemlist).length + " , " + soluong;

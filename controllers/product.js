@@ -19,7 +19,7 @@ var storage = multer.diskStorage({
 var uploadStore = multer({ storage: storage });
 
 const dbname = 'shopbig';
-const uri = 'mongodb+srv://RDfYkRnmj0GbTr16:KSEwLJGtq1Nvya90@cluster0.phozs.mongodb.net/shopbig?retryWrites=true&w=majority' + dbname;
+const uri = 'mongodb+srv://RDfYkRnmj0GbTr16:RDfYkRnmj0GbTr16@cluster0.phozs.mongodb.net/shopbig?retryWrites=true&w=majority' + dbname;
 
 /// --- Code CONTROLLERs
 router.use(function timeLog (req, res, next) {

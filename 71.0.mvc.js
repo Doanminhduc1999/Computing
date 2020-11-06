@@ -67,6 +67,12 @@ productControl.params = { configHeader: configHeader, configDB: configDB};
 var uploadControl = require('./controllers/upload');
 app.use('/upload', uploadControl);
 uploadControl.params = { configHeader: configHeader, configDB: configDB};
+
+var paymentControl = require('./controllers/payment');
+app.use('/payment', paymentControl);
+paymentControl.params = { configHeader: configHeader, configDB: configDB};
+
+
 // uploadControl.uploadStore = uploadStore;
 
 /// ------------------ Khai bao cac Control, hàm , ... 
@@ -174,7 +180,15 @@ function orderPage(req, res) {
 
 }
 
-
+app.get('/payment',paymentPage);
+function paymentPage(req,res){
+    var name = req.query.name;
+    console.log(name);
+    res.render("pages/payment",  {
+        title: "ATN-Shop payment page",names:name
+        , configHeader: configHeader , currpage: "Product"
+        });
+}
 
 /// ..................................................
 app.get('/user/create', createUserPage);
