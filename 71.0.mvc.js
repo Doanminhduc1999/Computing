@@ -180,6 +180,17 @@ function orderPage(req, res) {
 
 }
 
+app.get('/payment',paymentPage);
+function paymentPage(req,res){
+    var name = req.query.name;
+    console.log(name);
+    res.render("pages/payment",  {
+        title: "ATN-Shop payment page",names:name
+        , configHeader: configHeader , currpage: "Product"
+        });
+}
+
+
 app.get('/report',reportPage);
 function reportPage(req,res){
     var name = req.query.name;
